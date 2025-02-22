@@ -21,13 +21,13 @@ namespace BFY_TriCorder
             StreamWriter Temp = File.AppendText(LogPath + "Temperature.csv");  //append to temperature file
             Temp.Write(CurDate.ToShortDateString() + ",");  //write in csv format, date first
             Temp.Write(MorningNUD.Value.ToString() + ",");  //morning temp
-            Temp.Write(AfternoonNUD.Value.ToString() + ",CM");  //afternoon temp, and initials
+            Temp.Write(AfternoonNUD.Value.ToString() + ",C.M.");  //afternoon temp, and initials
             Temp.WriteLine();  //blank line
             Temp.Flush();
             Temp.Close();  //close stream
 
             StreamWriter Depo = File.AppendText(LogPath + "Deposit.csv");  //deposit file
-            Depo.Write(CurDate.ToShortDateString() + ",CM,");  //date, ititals
+            Depo.Write(CurDate.ToShortDateString() + ",C.M.,");  //date, initials
             Depo.Write(AmountNUD.Value.ToString());  //amount
             Depo.WriteLine();  //blank line
             Depo.Flush();
@@ -46,4 +46,4 @@ namespace BFY_TriCorder
             synth.SpeakAsync("Deposit Amount:  $" + AmountNUD.Value.ToString());  //deposit amount
         }
     }  //end class
-}  //end namesace
+}  //end namespace
